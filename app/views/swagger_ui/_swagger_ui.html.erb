@@ -15,6 +15,9 @@
               console.log(swaggerUi);
           }
         $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+        <% if defined?(on_complete) %>
+        <%= on_complete %>(swaggerApi, swaggerUi);
+        <% end %>
       },
       onFailure: function(data) {
         if(console) {
